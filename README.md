@@ -19,4 +19,4 @@ Seccion: 1900
   
 
 El ejercicio consiste en un proyecto Simulador de Gestor de Procesos:  
-[Empresa Aprendamos](https://github.com/AlxZeroX/POO-1900/blob/master/Docs/Proyecto%20de%20POO.pdf)
+[Simulador de Gestor de Procesos](https://github.com/AlxZeroX/SISTEMAS-OPERATIVOS-I-IS412-1900/blob/master/Simulador%20de%20Gestor%20de%20Procesos.pdf)
