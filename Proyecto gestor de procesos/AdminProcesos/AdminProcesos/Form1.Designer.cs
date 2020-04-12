@@ -92,6 +92,7 @@
             this.btnactualizar.TabIndex = 5;
             this.btnactualizar.Text = "Actualizar";
             this.btnactualizar.UseVisualStyleBackColor = true;
+            this.btnactualizar.Click += new System.EventHandler(this.btnactualizar_Click);
             // 
             // btncerrar
             // 
@@ -101,6 +102,7 @@
             this.btncerrar.TabIndex = 6;
             this.btncerrar.Text = "Cerrar";
             this.btncerrar.UseVisualStyleBackColor = true;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
             // 
             // btnsalir
             // 

@@ -60,6 +60,16 @@ namespace AdminProcesos
 
         private void button3_Click(object sender, EventArgs e)
         {
+            Close();
+        }
+
+        private void btnactualizar_Click(object sender, EventArgs e)
+        {
+            ActualizarProcesos();
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
 
         }
     }
