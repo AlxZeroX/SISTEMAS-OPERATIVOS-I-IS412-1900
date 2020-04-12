@@ -60,8 +60,11 @@ namespace AdminProcesos
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Close();
+            if (MessageBox.Show(this, "¿Desea salir del programa?", "Salir" , MessageBoxButtons.YesNo) == DialogResult.Yes) {
+                Close();
+            }
         }
+
 
         private void btnactualizar_Click(object sender, EventArgs e)
         {
