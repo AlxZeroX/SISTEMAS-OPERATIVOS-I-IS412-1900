@@ -72,10 +72,10 @@ namespace AdminProcesos
         {
             try
             {
-                foreach (Process programa in Process.GetCurrentProcess())
+                foreach (Process programa in Process.GetProcesses())
                 {
                     String seleccion = lstprocesos.SelectedItem.ToString();
-                    String[] proceso = seleccion.Split(';');
+                    String[] proceso = seleccion.Split(':');
                     if (programa.ProcessName == proceso[1])
                     {
                         programa.Kill(); //mata el proceso que seleccione
