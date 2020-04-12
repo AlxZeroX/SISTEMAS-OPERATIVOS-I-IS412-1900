@@ -70,7 +70,23 @@ namespace AdminProcesos
 
         private void btncerrar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                foreach (Process programa in Process.GetCurrentProcess())
+                {
+                    String seleccion = lstprocesos.SelectedItem.ToString();
+                    String[] proceso = seleccion.Split(';');
+                    if (programa.ProcessName == proceso[1])
+                    {
+                        programa.Kill(); //mata el proceso que seleccione
+                    }
+                }
+            }
 
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
