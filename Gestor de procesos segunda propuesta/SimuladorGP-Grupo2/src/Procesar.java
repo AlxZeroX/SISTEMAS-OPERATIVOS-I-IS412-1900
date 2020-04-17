@@ -490,29 +490,48 @@ public class Procesar extends javax.swing.JFrame {
             while(i<Contador){ //Recorrer las filas
                 Cargar(i);
                 if(ResiduoRafaga!=0 && ResiduoRafaga>Quantum){ //Ejecutando Procesos
-                    
-                    for(int c=1; c<=Quantum; c++){
-                        jTIngreso.setValueAt("Ejecutando",i,4);
-                        jTIngreso.setForeground(Color.red);
-                        ResiduoRafaga--;
-                        Barra(Rafaga,ResiduoRafaga);
-                        Pintar();
-                        jTIngreso.setValueAt(String.valueOf(ResiduoRafaga),i,3);
-                        TiempoProceso++;
-                        Reposo();
-                    }
-                    jTIngreso.setValueAt("Espera",i,4);
-                    
-                    
-                    
-                    
+
+                    if(ResiduoRafaga!=13 || ResiduoRafaga!=27){
+                        for(int c=1; c<=Quantum; c++){
+                            if(ResiduoRafaga==13){
+                                jTIngreso.setValueAt("BLOQUEO (3)",i,4);
+                                ResiduoRafaga--;
+                                Barra(Rafaga,ResiduoRafaga);
+                                Pintar();
+                                jTIngreso.setValueAt(String.valueOf(ResiduoRafaga),i,3);
+                                TiempoProceso++;
+                                break;
+                            }
+                            if(ResiduoRafaga==27){
+                                jTIngreso.setValueAt("BLOQUEO (5)",i,4);
+                                ResiduoRafaga--;
+                                Barra(Rafaga,ResiduoRafaga);
+                                Pintar();
+                                jTIngreso.setValueAt(String.valueOf(ResiduoRafaga),i,3);
+                                TiempoProceso++;
+                                break;   
+                            }
+                            else{
+                                jTIngreso.setValueAt("Ejecutando",i,4);
+                                ResiduoRafaga--;
+                                Barra(Rafaga,ResiduoRafaga);
+                                Pintar();
+                                jTIngreso.setValueAt(String.valueOf(ResiduoRafaga),i,3);
+                                TiempoProceso++;
+                                Reposo();
+                            }
+                            jTIngreso.setValueAt("Espera",i,4);
+                        }    
+                            
                     if(ResiduoRafaga==0){
                         jTIngreso.setValueAt("Terminado",i,4);
                         Pintar();
                         Informe(i);
                         Borrar(i);
                         jPBEstado.setValue(0);
-                    }
+                    }                                        
+                }
+                         
             }else{
                     
                 if(ResiduoRafaga>0 && Quantum!=0){
@@ -535,6 +554,27 @@ public class Procesar extends javax.swing.JFrame {
                         Borrar(i);
                         jPBEstado.setValue(0);
                      }
+                    
+                    if(ResiduoRafaga==13){
+                        jTIngreso.setValueAt("BLOQUEO (3)",i,4);
+                        ResiduoRafaga--;
+                        Barra(Rafaga,ResiduoRafaga);
+                        Pintar();
+                        jTIngreso.setValueAt(String.valueOf(ResiduoRafaga),i,3);
+                        TiempoProceso++;
+                    }
+                    
+                    if(ResiduoRafaga==27){
+                        jTIngreso.setValueAt("BLOQUEO (5)",i,4);
+                        ResiduoRafaga--;
+                        Barra(Rafaga,ResiduoRafaga);
+                        Pintar();
+                        jTIngreso.setValueAt(String.valueOf(ResiduoRafaga),i,3);
+                        TiempoProceso++;
+                    }
+                    
+                    
+                    
                     }else{
                         if(ResiduoRafaga==0 && Quantum!=0){
                             jTIngreso.setValueAt("Terminado",i,4);
@@ -560,7 +600,7 @@ public class Procesar extends javax.swing.JFrame {
 
 public void Reposo(){
     try{
-        Thread.sleep(500); //Dormir sistema
+        Thread.sleep(600); //Dormir sistema
     }catch(InterruptedException ex){
         Logger.getLogger(Procesar.class.getName()).log(Level.SEVERE,null,ex);
     }
