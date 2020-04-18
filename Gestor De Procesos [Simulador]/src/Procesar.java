@@ -70,7 +70,7 @@ public class Procesar extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         Prioridad = new javax.swing.JComboBox<>();
-        jBSalir1 = new javax.swing.JButton();
+        jBGuardar = new javax.swing.JButton();
         jTFCapturaID = new javax.swing.JTextField();
         jTFCapturaRafaga = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -225,10 +225,10 @@ public class Procesar extends javax.swing.JFrame {
             }
         });
 
-        jBSalir1.setText("Guardar");
-        jBSalir1.addActionListener(new java.awt.event.ActionListener() {
+        jBGuardar.setText("Guardar");
+        jBGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBSalir1ActionPerformed(evt);
+                jBGuardarActionPerformed(evt);
             }
         });
 
@@ -295,7 +295,7 @@ public class Procesar extends javax.swing.JFrame {
                                             .addComponent(jLCantidadProcesos)
                                             .addComponent(jLCantidadTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jBSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jBGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -369,7 +369,7 @@ public class Procesar extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLCantidadTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jBSalir1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jBGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -431,9 +431,9 @@ public class Procesar extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void jBSalir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalir1ActionPerformed
+    private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jBSalir1ActionPerformed
+    }//GEN-LAST:event_jBGuardarActionPerformed
 
     private void jTFCapturaIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFCapturaIDActionPerformed
         // TODO add your handling code here:
@@ -696,9 +696,9 @@ public void Borrar(int c){ //Elimina los registros de la tabla procesos
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> Prioridad;
     private javax.swing.JButton jBAgregar;
+    private javax.swing.JButton jBGuardar;
     private javax.swing.JButton jBIniciar;
     private javax.swing.JButton jBSalir;
-    private javax.swing.JButton jBSalir1;
     private javax.swing.JTextField jLCantidadProcesos;
     private javax.swing.JTextField jLCantidadTiempo;
     private javax.swing.JTextField jLNumeroProceso;
