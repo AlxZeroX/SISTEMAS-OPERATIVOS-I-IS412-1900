@@ -13,6 +13,7 @@ Seccion: 1900
 
 20131015700-Cristian Alexander Martinez Ochoa
 
+20131006640- Ariel Isai Turcios Garcia
 
 
 **Proyecto a desarrollar**
