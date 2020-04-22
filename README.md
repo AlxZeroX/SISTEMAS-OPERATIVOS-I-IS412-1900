@@ -9,10 +9,11 @@ Seccion: 1900
 
 #INTEGRANTES:
 
-20121003387-David Alexander Cardenas Almendares
+20121003387 - David Alexander Cardenas Almendares
 
-20131015700-Cristian Alexander Martinez Ochoa
+20131015700 - Cristian Alexander Martinez Ochoa
 
+20131006640 - Ariel Isai Turcios Garcia
 
 
 **Proyecto a desarrollar**
