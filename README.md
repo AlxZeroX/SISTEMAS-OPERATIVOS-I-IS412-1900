@@ -15,6 +15,10 @@ Seccion: 1900
 
 20131006640 - Ariel Isai Turcios Garcia
 
+20131007637 - Franklin Romario Chavarria Lainez	
+
+20121016684 - Emerson Joel Amador 				
+
 
 **Proyecto a desarrollar**
   
