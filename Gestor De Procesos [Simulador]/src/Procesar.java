@@ -11,6 +11,7 @@ public class Procesar extends javax.swing.JFrame {
     int Contador;//Contador del total de procesos que se van ingresando
     int NProceso;//Carga el número de procesos ejecutándose
     int IdProceso;//Carga el ID del proceso
+    int IdPrioridad;//Carga el ID del proceso
     int Rafaga=0;//Carga la ráfaga en ejecución
     int Quantum=0;//Carga el Intervalo - Periodo (quantum) en ejecución
     int ResiduoRafaga=0;//Carga el residuo en ejecución
@@ -69,7 +70,7 @@ public class Procesar extends javax.swing.JFrame {
         jBSalir = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        Prioridad = new javax.swing.JComboBox<>();
+        jTFCapturaPrioridad = new javax.swing.JComboBox<>();
         jTFCapturaID = new javax.swing.JTextField();
         jTFCapturaRafaga = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -120,7 +121,7 @@ public class Procesar extends javax.swing.JFrame {
 
             },
             new String [] {
-                "#Proceso", "Ciclos", "Quantum(Intrucciones)", "FIFO (Restante)", "Estado", "ID"
+                "#Proceso", "Ciclos", "Quantum(Intrucciones)", "FIFO (Restante)", "Estado", "ID", "Prioridad"
             }
         ));
         jTIngreso.setEnabled(false);
@@ -217,10 +218,10 @@ public class Procesar extends javax.swing.JFrame {
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Prioridad");
 
-        Prioridad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
-        Prioridad.addActionListener(new java.awt.event.ActionListener() {
+        jTFCapturaPrioridad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
+        jTFCapturaPrioridad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PrioridadActionPerformed(evt);
+                jTFCapturaPrioridadActionPerformed(evt);
             }
         });
 
@@ -305,9 +306,9 @@ public class Procesar extends javax.swing.JFrame {
                                     .addComponent(jTFCapturaRafaga, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Prioridad, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTFCapturaPrioridad, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 194, Short.MAX_VALUE)
                                 .addComponent(jBAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(78, 78, 78)
                                 .addComponent(jBIniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -331,7 +332,7 @@ public class Procesar extends javax.swing.JFrame {
                             .addComponent(jLabel8)
                             .addComponent(jLabel9))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Prioridad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jTFCapturaPrioridad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jBIniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jBAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -413,9 +414,9 @@ public class Procesar extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jBSalirActionPerformed
 
-    private void PrioridadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrioridadActionPerformed
+    private void jTFCapturaPrioridadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFCapturaPrioridadActionPerformed
         
-    }//GEN-LAST:event_PrioridadActionPerformed
+    }//GEN-LAST:event_jTFCapturaPrioridadActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         System.exit(0);
@@ -599,6 +600,7 @@ public void Cargar(int i){ //Carga los valores de la Tabla
     Quantum=parseInt((String)(jTIngreso.getValueAt(i,2)));
     ResiduoRafaga=parseInt((String)(jTIngreso.getValueAt(i,3)));
     IdProceso=parseInt((String)(jTIngreso.getValueAt(i,5)));
+    IdPrioridad=parseInt((String)(jTIngreso.getValueAt(i,6)));
     if(NProceso>0){
         jLNumeroProceso.setText(String.valueOf(NProceso));
     }
@@ -608,13 +610,14 @@ public void Cargar(int i){ //Carga los valores de la Tabla
 public void Ingresar(){ //Ingresar proceso a la tabla
     DefaultTableModel modelo=(DefaultTableModel) jTIngreso.getModel();
     Contador ++;
-    Object[] miTabla = new Object[6];
+    Object[] miTabla = new Object[7];
     miTabla[0]= Contador;
     miTabla[1]= jTFCapturaRafaga.getText();
     miTabla[2]= jTFCapturaQuantum.getText();
     miTabla[3]= jTFCapturaRafaga.getText();
     miTabla[4]= "Listo";
     miTabla[5]= jTFCapturaID.getText();
+    miTabla[6]= jTFCapturaPrioridad.getSelectedItem();
     modelo.addRow(miTabla);
     jTIngreso.setModel(modelo); 
     jTFCapturaID.setText(null);
@@ -674,13 +677,12 @@ public void Borrar(int c){ //Elimina los registros de la tabla procesos
         jTFCapturaRafaga.setVisible(false);
         jLabel8.setVisible(false);
         jLabel9.setVisible(false);
-        Prioridad.setVisible(false);
+        jTFCapturaPrioridad.setVisible(false);
 }
     
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> Prioridad;
     private javax.swing.JButton jBAgregar;
     private javax.swing.JButton jBIniciar;
     private javax.swing.JButton jBSalir;
@@ -706,6 +708,7 @@ public void Borrar(int c){ //Elimina los registros de la tabla procesos
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextField jTFCapturaID;
+    private javax.swing.JComboBox<String> jTFCapturaPrioridad;
     private javax.swing.JTextField jTFCapturaQuantum;
     private javax.swing.JTextField jTFCapturaRafaga;
     private javax.swing.JTable jTFinal;
