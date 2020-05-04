@@ -26,8 +26,11 @@ public class Procesar extends javax.swing.JFrame {
      */
     public Procesar() {
         initComponents();
-        jTIngreso.setBackground(Color.CYAN);
-        jTIngreso.setForeground(Color.blue);
+        jTIngreso1.setBackground(Color.CYAN);
+        jTIngreso1.setForeground(Color.blue);
+        jTIngreso2.setBackground(Color.CYAN);
+        jTIngreso2.setForeground(Color.blue);
+
         jTFinal.setBackground(Color.green);
         //jTFinal.setBackground(Color.red);
         jTFCapturaQuantum.grabFocus();
@@ -51,7 +54,7 @@ public class Procesar extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jBAgregar = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTIngreso = new javax.swing.JTable();
+        jTIngreso1 = new javax.swing.JTable();
         jTFCapturaQuantum = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -73,6 +76,8 @@ public class Procesar extends javax.swing.JFrame {
         jTFCapturaPrioridad = new javax.swing.JComboBox<>();
         jTFCapturaID = new javax.swing.JTextField();
         jTFCapturaRafaga = new javax.swing.JTextField();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTIngreso2 = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -116,7 +121,7 @@ public class Procesar extends javax.swing.JFrame {
             }
         });
 
-        jTIngreso.setModel(new javax.swing.table.DefaultTableModel(
+        jTIngreso1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -124,8 +129,8 @@ public class Procesar extends javax.swing.JFrame {
                 "#Proceso", "Ciclos", "Quantum(Intrucciones)", "FIFO (Restante)", "Estado", "ID", "Prioridad"
             }
         ));
-        jTIngreso.setEnabled(false);
-        jScrollPane3.setViewportView(jTIngreso);
+        jTIngreso1.setEnabled(false);
+        jScrollPane3.setViewportView(jTIngreso1);
 
         jTFCapturaQuantum.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jTFCapturaQuantum.addActionListener(new java.awt.event.ActionListener() {
@@ -197,7 +202,7 @@ public class Procesar extends javax.swing.JFrame {
 
             },
             new String [] {
-                "#Proceso", "Identificador", "Ciclos", "Quantum(Instrucciones)", "Tiempo Total", "Estado"
+                "#Proceso", "Identificador", "Ciclos", "Quantum(Instrucciones)", "Tiempo Total", "Estado", "Prioridad"
             }
         ));
         jScrollPane4.setViewportView(jTFinal);
@@ -239,6 +244,17 @@ public class Procesar extends javax.swing.JFrame {
             }
         });
 
+        jTIngreso2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "#Proceso", "Ciclos", "Quantum(Intrucciones)", "FIFO (Restante)", "Estado", "ID", "Prioridad"
+            }
+        ));
+        jTIngreso2.setEnabled(false);
+        jScrollPane5.setViewportView(jTIngreso2);
+
         jMenu1.setText("File");
 
         jMenuItem1.setText("Salir");
@@ -262,34 +278,39 @@ public class Procesar extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel7)
-                        .addGap(1002, 1002, 1002))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLNumeroProceso, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLPorcentajeProceso, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jPBEstado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(1002, 1401, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(362, 362, 362)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLCantidadProcesos)
-                                            .addComponent(jLCantidadTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 694, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jBSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 657, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(jLNumeroProceso, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLPorcentajeProceso, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jPBEstado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(362, 362, 362)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(18, 18, 18)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(jLCantidadProcesos)
+                                                    .addComponent(jLCantidadTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jBSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(18, 18, 18))
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTFCapturaQuantum, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -308,10 +329,12 @@ public class Procesar extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTFCapturaPrioridad, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 194, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 561, Short.MAX_VALUE)
                                 .addComponent(jBAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(78, 78, 78)
-                                .addComponent(jBIniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(53, 53, 53)
+                                .addComponent(jBIniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(25, 25, 25))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
@@ -336,11 +359,13 @@ public class Procesar extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jBIniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jBAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(55, 55, 55)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addGap(74, 74, 74)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -472,7 +497,7 @@ public class Procesar extends javax.swing.JFrame {
     public void run(){
         int estado=1; //Estado de while que indica si se puede seguir o no
         int i=0; // contador de while
-        
+        traspaso();
         while(estado!=0){
             while(i<Contador){ //Recorrer las filas
                 Cargar(i);
@@ -481,37 +506,37 @@ public class Procesar extends javax.swing.JFrame {
                     if(ResiduoRafaga!=13 || ResiduoRafaga!=27){
                         for(int c=1; c<=Quantum; c++){
                             if(ResiduoRafaga==13){
-                                jTIngreso.setValueAt("BLOQUEO (3)",i,4);
+                                jTIngreso2.setValueAt("BLOQUEO (3)",i,4);
                                 ResiduoRafaga--;
                                 Barra(Rafaga,ResiduoRafaga);
                                 Pintar();
-                                jTIngreso.setValueAt(String.valueOf(ResiduoRafaga),i,3);
+                                jTIngreso2.setValueAt(String.valueOf(ResiduoRafaga),i,3);
                                 TiempoProceso++;
                                 break;
                             }
                             if(ResiduoRafaga==27){
-                                jTIngreso.setValueAt("BLOQUEO (5)",i,4);
+                                jTIngreso2.setValueAt("BLOQUEO (5)",i,4);
                                 ResiduoRafaga--;
                                 Barra(Rafaga,ResiduoRafaga);
                                 Pintar();
-                                jTIngreso.setValueAt(String.valueOf(ResiduoRafaga),i,3);
+                                jTIngreso2.setValueAt(String.valueOf(ResiduoRafaga),i,3);
                                 TiempoProceso++;
                                 break;   
                             }
                             else{
-                                jTIngreso.setValueAt("Ejecutando",i,4);
+                                jTIngreso2.setValueAt("Ejecutando",i,4);
                                 ResiduoRafaga--;
                                 Barra(Rafaga,ResiduoRafaga);
                                 Pintar();
-                                jTIngreso.setValueAt(String.valueOf(ResiduoRafaga),i,3);
+                                jTIngreso2.setValueAt(String.valueOf(ResiduoRafaga),i,3);
                                 TiempoProceso++;
                                 Reposo();
                             }
-                            jTIngreso.setValueAt("Espera",i,4);
+                            jTIngreso2.setValueAt("Espera",i,4);
                         }    
                             
                     if(ResiduoRafaga==0){
-                        jTIngreso.setValueAt("Terminado",i,4);
+                        jTIngreso2.setValueAt("Terminado",i,4);
                         Pintar();
                         Informe(i);
                         Borrar(i);
@@ -523,19 +548,19 @@ public class Procesar extends javax.swing.JFrame {
                     
                 if(ResiduoRafaga>0 && Quantum!=0){
                     while(ResiduoRafaga>0){
-                        jTIngreso.setValueAt("Ejecutando",i,4);
+                        jTIngreso2.setValueAt("Ejecutando",i,4);
                         ResiduoRafaga--;
                         Barra(Rafaga,ResiduoRafaga);
                         Pintar();
-                        jTIngreso.setValueAt(String.valueOf(ResiduoRafaga),i,3);
+                        jTIngreso2.setValueAt(String.valueOf(ResiduoRafaga),i,3);
                         TiempoProceso++;
                         Reposo();
                     }
-                    jTIngreso.setValueAt("Espera",i,4);
+                    jTIngreso2.setValueAt("Espera",i,4);
                     
                     
                     if(ResiduoRafaga==0 && Quantum!=0){
-                        jTIngreso.setValueAt("Terminado",i,4);
+                        jTIngreso2.setValueAt("Terminado",i,4);
                         Pintar();
                         Informe(i);
                         Borrar(i);
@@ -543,20 +568,20 @@ public class Procesar extends javax.swing.JFrame {
                      }
                     
                     if(ResiduoRafaga==13){
-                        jTIngreso.setValueAt("BLOQUEO (3)",i,4);
+                        jTIngreso2.setValueAt("BLOQUEO (3)",i,4);
                         ResiduoRafaga--;
                         Barra(Rafaga,ResiduoRafaga);
                         Pintar();
-                        jTIngreso.setValueAt(String.valueOf(ResiduoRafaga),i,3);
+                        jTIngreso2.setValueAt(String.valueOf(ResiduoRafaga),i,3);
                         TiempoProceso++;
                     }
                     
                     if(ResiduoRafaga==27){
-                        jTIngreso.setValueAt("BLOQUEO (5)",i,4);
+                        jTIngreso2.setValueAt("BLOQUEO (5)",i,4);
                         ResiduoRafaga--;
                         Barra(Rafaga,ResiduoRafaga);
                         Pintar();
-                        jTIngreso.setValueAt(String.valueOf(ResiduoRafaga),i,3);
+                        jTIngreso2.setValueAt(String.valueOf(ResiduoRafaga),i,3);
                         TiempoProceso++;
                     }
                     
@@ -564,7 +589,7 @@ public class Procesar extends javax.swing.JFrame {
                     
                     }else{
                         if(ResiduoRafaga==0 && Quantum!=0){
-                            jTIngreso.setValueAt("Terminado",i,4);
+                            jTIngreso2.setValueAt("Terminado",i,4);
                             Pintar();
                             Informe(i);
                             Borrar(i);
@@ -595,12 +620,14 @@ public void Reposo(){
 }
 
 public void Cargar(int i){ //Carga los valores de la Tabla
-    NProceso=(int)jTIngreso.getValueAt(i,0);
-    Rafaga=parseInt((String)(jTIngreso.getValueAt(i,1)));
-    Quantum=parseInt((String)(jTIngreso.getValueAt(i,2)));
-    ResiduoRafaga=parseInt((String)(jTIngreso.getValueAt(i,3)));
-    IdProceso=parseInt((String)(jTIngreso.getValueAt(i,5)));
-    IdPrioridad=parseInt((String)(jTIngreso.getValueAt(i,6)));
+   
+    
+    NProceso=(int)jTIngreso2.getValueAt(i,0);
+    Rafaga=parseInt((String)(jTIngreso2.getValueAt(i,1)));
+    Quantum=parseInt((String)(jTIngreso2.getValueAt(i,2)));
+    ResiduoRafaga=parseInt((String)(jTIngreso2.getValueAt(i,3)));
+    IdProceso=parseInt((String)(jTIngreso2.getValueAt(i,5)));
+    IdPrioridad=parseInt((String)(jTIngreso2.getValueAt(i,6)));
     if(NProceso>0){
         jLNumeroProceso.setText(String.valueOf(NProceso));
     }
@@ -608,7 +635,7 @@ public void Cargar(int i){ //Carga los valores de la Tabla
 }
 
 public void Ingresar(){ //Ingresar proceso a la tabla
-    DefaultTableModel modelo=(DefaultTableModel) jTIngreso.getModel();
+    DefaultTableModel modelo=(DefaultTableModel) jTIngreso1.getModel();
     Contador ++;
     Object[] miTabla = new Object[7];
     miTabla[0]= Contador;
@@ -619,7 +646,7 @@ public void Ingresar(){ //Ingresar proceso a la tabla
     miTabla[5]= jTFCapturaID.getText();
     miTabla[6]= jTFCapturaPrioridad.getSelectedItem();
     modelo.addRow(miTabla);
-    jTIngreso.setModel(modelo); 
+    jTIngreso1.setModel(modelo); 
     jTFCapturaID.setText(null);
     jTFCapturaID.grabFocus();
     jTFCapturaRafaga.setText(null);
@@ -629,15 +656,15 @@ public void Ingresar(){ //Ingresar proceso a la tabla
 public void Informe(int c){
     DefaultTableModel modelo2 = (DefaultTableModel) jTFinal.getModel();
 
-    Object[] miTabla= new Object[6];
+    Object[] miTabla= new Object[7];
     miTabla[0]= c+1;
     miTabla[1]= IdProceso;
     miTabla[2]= Rafaga;
     miTabla[3]= Quantum;
     miTabla[4]= TiempoProceso+" Segundos";
     miTabla[5]= "Terminado";
+    miTabla[6]= IdPrioridad;
     
-
     modelo2.addRow(miTabla);
     jTFinal.setModel(modelo2);
     CantidadProcesos++;
@@ -645,12 +672,75 @@ public void Informe(int c){
     jLCantidadTiempo.setText(String.valueOf(TiempoProceso+" Segundos"));
 }
 
+
+public void traspaso(){
+    int A=0;
+    while(A!=Contador){
+    if((String)(jTIngreso1.getValueAt(A,6))=="1"){
+    DefaultTableModel modelo=(DefaultTableModel) jTIngreso2.getModel();
+    Object[] miTabla = new Object[7];
+    miTabla[0]= jTIngreso1.getValueAt(A,0);
+    miTabla[1]= jTIngreso1.getValueAt(A,1);
+    miTabla[2]= jTIngreso1.getValueAt(A,2);
+    miTabla[3]= jTIngreso1.getValueAt(A,3);
+    miTabla[4]= "Listo";
+    miTabla[5]= jTIngreso1.getValueAt(A,5);
+    miTabla[6]= jTIngreso1.getValueAt(A,6);
+    modelo.addRow(miTabla);
+    jTIngreso2.setModel(modelo); 
+    A++;
+}else{
+        A++;
+    }
+}
+    A=0;
+    while(A!=Contador){
+    if((String)(jTIngreso1.getValueAt(A,6))=="2"){
+    DefaultTableModel modelo=(DefaultTableModel) jTIngreso2.getModel();
+    Object[] miTabla = new Object[7];
+    miTabla[0]= jTIngreso1.getValueAt(A,0);
+    miTabla[1]= jTIngreso1.getValueAt(A,1);
+    miTabla[2]= jTIngreso1.getValueAt(A,2);
+    miTabla[3]= jTIngreso1.getValueAt(A,3);
+    miTabla[4]= "Listo";
+    miTabla[5]= jTIngreso1.getValueAt(A,5);
+    miTabla[6]= jTIngreso1.getValueAt(A,6);
+    modelo.addRow(miTabla);
+    jTIngreso2.setModel(modelo); 
+    A++;
+}else{
+        A++;
+    }
+    }
+    
+     A=0;
+    while(A!=Contador){
+    if((String)(jTIngreso1.getValueAt(A,6))=="3"){
+    DefaultTableModel modelo=(DefaultTableModel) jTIngreso2.getModel();
+    Object[] miTabla = new Object[7];
+    miTabla[0]= jTIngreso1.getValueAt(A,0);
+    miTabla[1]= jTIngreso1.getValueAt(A,1);
+    miTabla[2]= jTIngreso1.getValueAt(A,2);
+    miTabla[3]= jTIngreso1.getValueAt(A,3);
+    miTabla[4]= "Listo";
+    miTabla[5]= jTIngreso1.getValueAt(A,5);
+    miTabla[6]= jTIngreso1.getValueAt(A,6);
+    modelo.addRow(miTabla);
+    jTIngreso2.setModel(modelo); 
+    A++;
+}else{
+        A++;
+    }
+    }
+}
+
+
 public void Borrar(int c){ //Elimina los registros de la tabla procesos
-    jTIngreso.setValueAt(0,c,0);
-    jTIngreso.setValueAt("0",c,1);
-    jTIngreso.setValueAt("0",c,2);
-    jTIngreso.setValueAt("0",c,3);
-    jTIngreso.setValueAt("Finalizado",c,4);
+    jTIngreso2.setValueAt(0,c,0);
+    jTIngreso2.setValueAt("0",c,1);
+    jTIngreso2.setValueAt("0",c,2);
+    jTIngreso2.setValueAt("0",c,3);
+    jTIngreso2.setValueAt("Finalizado",c,4);
 }
 
    public void Barra(int rafaga, int residuo){ //Calcula porcentaje de la barra y su progreso
@@ -707,12 +797,14 @@ public void Borrar(int c){ //Elimina los registros de la tabla procesos
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTextField jTFCapturaID;
     private javax.swing.JComboBox<String> jTFCapturaPrioridad;
     private javax.swing.JTextField jTFCapturaQuantum;
     private javax.swing.JTextField jTFCapturaRafaga;
     private javax.swing.JTable jTFinal;
-    public javax.swing.JTable jTIngreso;
+    public javax.swing.JTable jTIngreso1;
+    public javax.swing.JTable jTIngreso2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
